@@ -77,13 +77,11 @@ RUN python -m virtualenv venv
 ENV PATH="/app/venv/bin:${PATH}"
 
 RUN python -m pip install --no-cache-dir poetry
-COPY pyproject.toml poetry.lock /app/
+COPY pyproject.toml poetry.toml /app/
 RUN poetry install --no-dev --no-interaction --no-ansi
 
 COPY . /app/
-
 RUN make dist-clean clean build ssap package
-COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 FROM python:3.12-slim AS final
