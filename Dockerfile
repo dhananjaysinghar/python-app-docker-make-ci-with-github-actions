@@ -1,3 +1,4 @@
+# File based deployment
 #FROM python:3.12-slim
 #WORKDIR /app
 #COPY requirements.txt .
@@ -5,7 +6,9 @@
 #COPY . .
 #EXPOSE 8501
 #CMD ["streamlit", "run", "src/app_1/handler.py"]
-#
+
+
+# ZIP based deployment
 FROM python:3.12-slim
 WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends unzip
