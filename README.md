@@ -1,4 +1,4 @@
-## Cmmands to run
+## Commands to run
 - python -m pip install --upgrade poetry
 - brew install make
 - make dist-clean clean build ssap package 
