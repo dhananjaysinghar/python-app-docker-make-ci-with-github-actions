@@ -90,6 +90,10 @@ ENV PATH="/app/.venv/bin:${PATH}"
 COPY --from=builder /app/dist/package/applications.zip /app/
 RUN unzip applications.zip && rm applications.zip
 
+#RUN useradd -m nonrootuser
+#RUN chown -R nonrootuser:nonrootuser /app
+#USER nonrootuser
+
 EXPOSE 8501
 CMD ["streamlit", "run", "app_1/handler.py"]
 
