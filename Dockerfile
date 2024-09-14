@@ -85,7 +85,7 @@ COPY --from=builder /app/.venv /app/.venv
 ENV PATH="/app/.venv/bin:${PATH}"
 # OR
 #COPY --from=builder /app/requirements.txt /app/requirements.txt
-#RUN pip install --no-cache-dir -r requirements.txt
+#RUN pip install --no-cache-dir -r requirements.txt --root-user-action=ignore
 
 COPY --from=builder /app/dist/package/applications.zip /app/
 RUN unzip applications.zip && rm applications.zip
