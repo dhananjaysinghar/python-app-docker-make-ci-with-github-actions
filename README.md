@@ -1,5 +1,6 @@
 
 ## Docker
+- make docker-run
 - docker build -t my-python-app .
 - docker run --name my-python-app  -p 8501:8501 -d my-python-app
 
